@@ -384,4 +384,118 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  // ===========================================================================
+  // 9. Interactive 60-Sec English Hesitation Quiz Engine
+  // ===========================================================================
+  let quizScores = { 1: 0, 2: 0, 3: 0 };
+
+  window.handleQuizAnswer = function(step, score) {
+    quizScores[step] = score;
+
+    const progress = document.getElementById("quizProgressBar");
+    const step1 = document.getElementById("quizStep1");
+    const step2 = document.getElementById("quizStep2");
+    const step3 = document.getElementById("quizStep3");
+    const resultCard = document.getElementById("quizResultCard");
+
+    if (step === 1) {
+      if (step1) step1.style.display = "none";
+      if (step2) step2.style.display = "block";
+      if (progress) progress.style.width = "66%";
+    } else if (step === 2) {
+      if (step2) step2.style.display = "none";
+      if (step3) step3.style.display = "block";
+      if (progress) progress.style.width = "100%";
+    } else if (step === 3) {
+      if (step3) step3.style.display = "none";
+      if (resultCard) resultCard.style.display = "block";
+
+      const totalScore = quizScores[1] + quizScores[2] + quizScores[3];
+      const headlineEl = document.getElementById("quizResultHeadline");
+      const meterBarEl = document.getElementById("resultMeterBar");
+      const descEl = document.getElementById("quizResultDesc");
+      const waActionEl = document.getElementById("quizWhatsappAction");
+
+      let headline = "";
+      let meterPercent = totalScore;
+      let diagnosis = "";
+      let recommendedCourse = "";
+
+      if (totalScore >= 65) {
+        headline = `${totalScore}% Hesitation Detected — "Translation Loop & Stage Freeze"`;
+        meterPercent = Math.min(totalScore, 95);
+        diagnosis = "आप अंग्रेजी समझ लेते हैं, लेकिन दिमाग में वाक्य हिंदी-से-अंग्रेजी अनुवाद में अटक जाते हैं और माइक के सामने घबराहट होती है। हमारे 20-मिनट के डेली पोडियम माइक अभ्यास से आप 30-45 दिनों में इस झिझक को पूरी तरह तोड़ सकते हैं!";
+        recommendedCourse = "Basic Spoken English + Stage Mic Drills";
+      } else if (totalScore >= 35) {
+        headline = `${totalScore}% Hesitation Detected — "Vocabulary & Continuity Gap"`;
+        meterPercent = Math.max(totalScore, 45);
+        diagnosis = "आप सामान्य बातचीत कर लेते हैं, लेकिन बीच में सही शब्द (Vocabulary) भूल जाते हैं और 10 मिनट लगातार नहीं बोल पाते। हमारे डिबेट एरिना एवं एक्सटेम्पोर ड्रिल्स से आपको धाराप्रवाह प्रवाह मिलेगा!";
+        recommendedCourse = "Advanced Spoken English & Fluency Mastery";
+      } else {
+        headline = `${Math.max(totalScore, 20)}% Hesitation — "Executive Polish & Placement Ready"`;
+        meterPercent = Math.max(totalScore, 25);
+        diagnosis = "आपके पास बोलने का अच्छा आत्मविश्वास है! आपको केवल एग्जीक्यूटिव ग्रूमिंग, कॉर्पोरेट इंटरव्यू तैयारी, और बॉडी लैंग्वेज पॉलिश की आवश्यकता है ताकि आप किसी भी MNC और कॉम्पिटिटिव इंटरव्यू में अव्वल आ सकें!";
+        recommendedCourse = "Public Speaking & Interview Mastery";
+      }
+
+      if (headlineEl) headlineEl.textContent = headline;
+      if (meterBarEl) meterBarEl.style.width = `${meterPercent}%`;
+      if (descEl) descEl.textContent = diagnosis;
+
+      if (waActionEl) {
+        const richMsg = 
+          `👋 *नमस्ते Deepak Sir / Team Creative English!*\n\n` +
+          `🎯 *I completed the English Hesitation Test on your website!*\n` +
+          `━━━━━━━━━━━━━━━━━━━━━━\n` +
+          `📊 *My Test Result:* ${headline}\n` +
+          `💡 *Diagnosis:* "${diagnosis}"\n` +
+          `📚 *Recommended Course:* ${recommendedCourse} 🚀\n` +
+          `📍 *Center:* Banaras Road, near Renuka Girls Hostel, Ambikapur\n` +
+          `━━━━━━━━━━━━━━━━━━━━━━\n` +
+          `🙏 *Please confirm when I can attend my Free 1-on-1 Hesitation Diagnosis Session!* ✨🌟`;
+
+        waActionEl.setAttribute("href", `https://wa.me/917354523597?text=${encodeURIComponent(richMsg)}`);
+      }
+    }
+  };
+
+  window.resetQuiz = function() {
+    quizScores = { 1: 0, 2: 0, 3: 0 };
+    const step1 = document.getElementById("quizStep1");
+    const step2 = document.getElementById("quizStep2");
+    const step3 = document.getElementById("quizStep3");
+    const resultCard = document.getElementById("quizResultCard");
+    const progress = document.getElementById("quizProgressBar");
+
+    if (resultCard) resultCard.style.display = "none";
+    if (step3) step3.style.display = "none";
+    if (step2) step2.style.display = "none";
+    if (step1) step1.style.display = "block";
+    if (progress) progress.style.width = "33%";
+  };
+
+  // ===========================================================================
+  // 10. Scroll Reveal Animation Observer (Ultra-Fast 60fps)
+  // ===========================================================================
+  const revealElements = document.querySelectorAll(".reveal-on-scroll");
+  if (revealElements.length > 0 && "IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -50px 0px",
+      threshold: 0.12
+    });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    // Fallback if IntersectionObserver is not supported
+    revealElements.forEach((el) => el.classList.add("revealed"));
+  }
 });
+
