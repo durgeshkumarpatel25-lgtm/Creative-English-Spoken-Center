@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <!-- Background Shield/Rounded Rect -->
+  <rect width="100" height="100" rx="24" fill="url(#navGrad)" />
+  <!-- Speech Bubble -->
+  <path d="M25 32 C25 24, 75 24, 75 32 C75 48, 65 52, 52 52 L42 62 L42 52 C30 52, 25 48, 25 32 Z" fill="url(#amberGrad)" />
+  <!-- C letter inside speech bubble -->
+  <path d="M52 34 C46 34, 42 38, 42 42 C42 46, 46 50, 52 50 C55 50, 57 49, 58 47" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round" fill="none" />
+  <!-- Sound Waves / Star of confidence -->
+  <circle cx="72" cy="26" r="4" fill="#FBBF24" />
+  <circle cx="80" cy="34" r="3" fill="#F59E0B" />
+</svg>

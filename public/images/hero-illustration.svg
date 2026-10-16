@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" fill="none">
+  <defs>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF" />
+      <stop offset="100%" stop-color="#FEF3C7" />
+    </linearGradient>
+    <linearGradient id="navyPill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="amberPill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background Decorative Circles -->
+  <circle cx="400" cy="325" r="260" fill="url(#bgGlow)" opacity="0.6" />
+  <circle cx="400" cy="325" r="200" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="8 8" opacity="0.8" />
+  
+  <!-- Podium / Stage Base -->
+  <path d="M 220 540 L 580 540 L 620 600 L 180 600 Z" fill="#E2E8F0" />
+  <rect x="250" y="525" width="300" height="20" rx="6" fill="#1E3A8A" />
+  <text x="400" y="540" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="11" fill="#FFFFFF" letter-spacing="2">PUBLIC SPEAKING STAGE</text>
+
+  <!-- Central Confident Speaker (Figure) -->
+  <!-- Torso & Suit -->
+  <path d="M 350 360 C 350 320, 450 320, 450 360 L 465 520 L 335 520 Z" fill="#1E3A8A" />
+  <!-- Shirt & Tie -->
+  <polygon points="400,340 385,410 415,410" fill="#FFFFFF" />
+  <polygon points="396,360 404,360 406,440 400,455 394,440" fill="#F59E0B" />
+  <!-- Head & Hair -->
+  <circle cx="400" cy="270" r="42" fill="#FBBF24" />
+  <!-- Hair -->
+  <path d="M 360 260 C 360 210, 440 210, 440 260 C 425 240, 375 240, 360 260 Z" fill="#0F172A" />
+  <!-- Smile & Confident Face -->
+  <circle cx="388" cy="265" r="4" fill="#0F172A" />
+  <circle cx="412" cy="265" r="4" fill="#0F172A" />
+  <path d="M 390 282 Q 400 295 410 282" stroke="#0F172A" stroke-width="3" stroke-linecap="round" fill="none" />
+
+  <!-- Microphone Stand -->
+  <line x1="390" y1="330" x2="370" y2="520" stroke="#64748B" stroke-width="4" stroke-linecap="round" />
+  <circle cx="390" cy="325" r="12" fill="#334155" />
+  <line x1="384" y1="322" x2="396" y2="322" stroke="#94A3B8" stroke-width="2" />
+  <line x1="384" y1="328" x2="396" y2="328" stroke="#94A3B8" stroke-width="2" />
+
+  <!-- Expressive Gesturing Arms -->
+  <!-- Right Arm with Micro / Open Palm -->
+  <path d="M 445 365 Q 490 380 505 345" stroke="#1E3A8A" stroke-width="22" stroke-linecap="round" fill="none" />
+  <circle cx="510" cy="340" r="12" fill="#FBBF24" />
+
+  <!-- Left Arm Open Palm -->
+  <path d="M 355 365 Q 310 380 295 345" stroke="#1E3A8A" stroke-width="22" stroke-linecap="round" fill="none" />
+  <circle cx="290" cy="340" r="12" fill="#FBBF24" />
+
+  <!-- Floating Feature Card 1: 100% Fluency Guaranteed (Left Top) -->
+  <g filter="url(#cardShadow)">
+    <rect x="70" y="160" width="220" height="85" rx="16" fill="#FFFFFF" />
+    <circle cx="108" cy="202" r="22" fill="#FEF3C7" />
+    <!-- Microphone Icon -->
+    <path d="M104 194 C104 190 112 190 112 194 L112 204 C112 208 104 208 104 204 Z" fill="#F59E0B" />
+    <path d="M101 200 C101 210 115 210 115 200" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" />
+    <line x1="108" y1="210" x2="108" y2="214" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" />
+    <text x="140" y="194" font-family="sans-serif" font-weight="bold" font-size="14" fill="#0F172A">Fluency Focus</text>
+    <text x="140" y="214" font-family="sans-serif" font-size="12" fill="#64748B">80% Speaking Drill</text>
+    <rect x="140" y="222" width="70" height="12" rx="6" fill="#10B981" fill-opacity="0.2" />
+    <text x="175" y="231" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="9" fill="#059669">DAILY GDs</text>
+  </g>
+
+  <!-- Floating Feature Card 2: 500+ Confident Students (Right Top) -->
+  <g filter="url(#cardShadow)">
+    <rect x="520" y="140" width="210" height="85" rx="16" fill="#FFFFFF" />
+    <circle cx="558" cy="182" r="22" fill="#DBEAFE" />
+    <!-- Trophy Icon -->
+    <path d="M550 172 L566 172 L566 182 C566 188 558 192 558 192 C558 192 550 188 550 182 Z" fill="#1E3A8A" />
+    <line x1="558" y1="192" x2="558" y2="197" stroke="#1E3A8A" stroke-width="3" />
+    <rect x="552" y="196" width="12" height="3" fill="#1E3A8A" />
+    <text x="590" y="174" font-family="sans-serif" font-weight="bold" font-size="14" fill="#0F172A">500+ Alumni</text>
+    <text x="590" y="194" font-family="sans-serif" font-size="12" fill="#64748B">Ambikapur & Surguja</text>
+    <text x="590" y="212" font-family="sans-serif" font-weight="bold" font-size="11" fill="#F59E0B">★★★★★ (4.9/5)</text>
+  </g>
+
+  <!-- Floating Speech Bubble: Left Bottom -->
+  <g filter="url(#cardShadow)">
+    <path d="M 120 380 Q 120 350 150 350 L 260 350 Q 290 350 290 380 L 290 410 Q 290 440 260 440 L 220 440 L 195 465 L 195 440 L 150 440 Q 120 440 120 410 Z" fill="#1E3A8A" />
+    <text x="205" y="385" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="13" fill="#FBBF24">"No More Hesitation!"</text>
+    <text x="205" y="412" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#FFFFFF">Stage Fear Overcome ✓</text>
+  </g>
+
+  <!-- Floating Speech Bubble: Right Bottom -->
+  <g filter="url(#cardShadow)">
+    <path d="M 520 370 Q 520 340 550 340 L 680 340 Q 710 340 710 370 L 710 405 Q 710 435 680 435 L 630 435 L 610 460 L 610 435 L 550 435 Q 520 435 520 405 Z" fill="#F59E0B" />
+    <text x="615" y="375" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="13" fill="#0F172A">Interview Ready 💼</text>
+    <text x="615" y="402" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#0F172A">Mock GDs & Debates</text>
+  </g>
+
+  <!-- Sparkles & Confidence Stars -->
+  <path d="M 330 150 L 334 162 L 346 166 L 334 170 L 330 182 L 326 170 L 314 166 L 326 162 Z" fill="#F59E0B" />
+  <path d="M 460 120 L 463 130 L 473 133 L 463 136 L 460 146 L 457 136 L 447 133 L 457 130 Z" fill="#1E3A8A" />
+  <circle cx="490" cy="230" r="5" fill="#F59E0B" />
+  <circle cx="310" cy="240" r="4" fill="#3B82F6" />
+</svg>
