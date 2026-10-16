@@ -904,6 +904,7 @@ svg {
   padding: 0.75rem;
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 35px rgba(245, 158, 11, 0.25);
   border: 2px solid rgba(245, 158, 11, 0.45);
+  margin: 4.5rem auto 4.5rem;
 }
 
 .hero-image-wrapper {
@@ -915,36 +916,54 @@ svg {
 
 .floating-badge {
   position: absolute;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-md);
-  padding: 0.65rem 0.9rem;
+  padding: 0.65rem 0.95rem;
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(245, 158, 11, 0.15);
   animation: float 4s ease-in-out infinite;
-  z-index: 2;
+  z-index: 3;
 }
 
 .floating-badge p:first-child {
   color: #ffffff !important;
+  font-weight: 800;
 }
 
 .floating-badge p:last-child {
-  color: #94a3b8 !important;
+  color: #cbd5e1 !important;
 }
 
 .floating-badge-top {
-  top: 1.5rem;
-  left: -0.5rem;
+  top: -4.25rem;
+  left: -1.25rem;
 }
 
 .floating-badge-bottom {
-  bottom: 1.5rem;
-  right: -0.5rem;
+  bottom: -4.25rem;
+  right: -1.25rem;
   animation-delay: 2s;
+}
+
+@media (max-width: 639px) {
+  .hero-visual-card {
+    margin: 4rem auto 4rem;
+  }
+
+  .floating-badge-top {
+    top: -3.85rem;
+    left: 0.5rem;
+  }
+
+  .floating-badge-bottom {
+    bottom: -3.85rem;
+    right: 0.5rem;
+  }
 }
 
 @keyframes float {
