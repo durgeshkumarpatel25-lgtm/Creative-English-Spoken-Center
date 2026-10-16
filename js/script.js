@@ -189,9 +189,35 @@ document.addEventListener("DOMContentLoaded", () => {
           if (studentNameEl) studentNameEl.textContent = fullName;
 
           if (whatsappConfirmBtn) {
-            const encodedMsg = encodeURIComponent(
-              `Hello! I just booked a Free Demo Class on your website.\n\n👤 Name: ${fullName}\n📱 Phone: ${phone}\n📚 Course: ${course}\n⏰ Preferred Slot: ${time}\n\nPlease confirm my batch slot at Banaras Road, Ambikapur!`
-            );
+            const courseEmojis = {
+              "Basic Spoken English": "🗣️ (Hindi to English Transition)",
+              "Advanced Spoken English & Fluency": "🔥 (Fluency & Accent Mastery)",
+              "Public Speaking & Stage Confidence": "🎙️ (Stage Presence & Mic Practice)",
+              "Personality Development & Grooming": "👔 (Executive Grooming & Etiquette)",
+              "Interview Prep & Group Discussion": "💼 (HR Questions & Mock GDs)",
+              "Kids & School Students English": "🎒 (School Recitation & Confidence)",
+              "Competitive Exam English": "📚 (Grammar Rules & Comprehension)",
+              "Professional & Business English": "🏢 (Corporate Emails & Meetings)"
+            };
+
+            const courseBadge = courseEmojis[course] || "📖";
+
+            const richEmojiMessage = 
+              `👋 *नमस्ते Sir / Team Creative English!*\n\n` +
+              `🎯 *New Free Demo Class Registration*\n` +
+              `━━━━━━━━━━━━━━━━━━━━━━\n` +
+              `👤 *Student Name:* ${fullName}\n` +
+              `📱 *Mobile Number:* +91 ${phone}\n` +
+              `📚 *Course Interested:* ${course}\n` +
+              `   ↳ ${courseBadge}\n` +
+              `📊 *Current English Level:* ${level} 📈\n` +
+              `⏰ *Preferred Batch Time:* ${time} ⏳\n` +
+              (message ? `💬 *Student Goal / Note:* "${message}" 🚀\n` : `💬 *Goal:* To speak English with 100% confidence! 🚀\n`) +
+              `📍 *Preferred Center:* Banaras Road, near Renuka Girls Hostel, Ambikapur (Gandhi Nagar)\n` +
+              `━━━━━━━━━━━━━━━━━━━━━━\n` +
+              `🙏 *Please confirm my free demo seat & timing!* ✨🌟`;
+
+            const encodedMsg = encodeURIComponent(richEmojiMessage);
             whatsappConfirmBtn.setAttribute("href", `https://wa.me/917354523597?text=${encodedMsg}`);
           }
         }

@@ -75,7 +75,7 @@
   <header class="header">
     <div class="container nav-inner">
       <a href="#home" class="brand-logo" aria-label="Creative English Spoken Center Home">
-        <img src="assets/logo.jpg" alt="Creative English Spoken Center Logo" style="width: 44px; height: 44px; border-radius: var(--radius-md); object-fit: contain; background: #ffffff; padding: 2px; border: 1px solid var(--color-border);" onerror="this.style.display='none'" />
+        <img src="assets/logo.jpg" alt="Creative English Spoken Center Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <div>
           <span class="logo-text-title">Creative English</span>
           <span class="logo-text-sub">Spoken Center • Ambikapur</span>
@@ -95,16 +95,21 @@
         </ul>
       </nav>
 
-      <!-- Desktop CTAs -->
+      <!-- Header CTAs (Desktop & Mobile) -->
       <div class="header-actions">
         <div class="desktop-actions">
-          <a href="tel:+917354523597" class="btn btn-outline btn-sm">
-            📞 +91 73545 23597
+          <a href="tel:+917354523597" class="btn btn-call btn-sm" aria-label="Call +91 73545 23597">
+            📞 Call: +91 73545 23597
           </a>
           <button type="button" class="btn btn-primary btn-sm open-demo-modal">
             Book Free Demo
           </button>
         </div>
+
+        <!-- Quick Call Button for Mobile -->
+        <a href="tel:+917354523597" class="header-call-btn-mobile" aria-label="Call +91 73545 23597 directly">
+          📞
+        </a>
 
         <!-- Mobile Hamburger Button -->
         <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile navigation">
@@ -122,7 +127,7 @@
     <div>
       <div class="mobile-drawer-header">
         <div class="brand-logo">
-          <img src="assets/logo.jpg" alt="Creative English Logo" style="width: 36px; height: 36px; border-radius: var(--radius-sm); object-fit: contain; background: #ffffff; padding: 2px;" onerror="this.style.display='none'" />
+          <img src="assets/logo.jpg" alt="Creative English Logo" class="brand-logo-img" style="width: 40px; height: 40px;" onerror="this.style.display='none'" />
           <div>
             <span class="logo-text-title" style="font-size: 1rem;">Creative English</span>
             <span class="logo-text-sub">Ambikapur</span>
@@ -195,20 +200,20 @@
           <button type="button" class="btn btn-primary open-demo-modal">
             📅 Book Free Demo Class
           </button>
-          <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20know%20about%20the%20spoken%20English%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%8C%9F%20I%20want%20to%20know%20about%20the%20spoken%20English%20and%20public%20speaking%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur.%20%F0%9F%A4%A9%F0%9F%93%9A%20Please%20guide%20me%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
             💬 Chat on WhatsApp
           </a>
-          <a href="tel:+917354523597" class="btn btn-outline">
-            📞 Call Now
+          <a href="tel:+917354523597" class="btn btn-call" aria-label="Call +91 73545 23597">
+            📞 Call Now: +91 73545 23597
           </a>
         </div>
       </div>
 
-      <!-- Hero Visual -->
+      <!-- Hero Visual (Showcasing Official Vertical Poster p2.jpg) -->
       <div class="hero-visual">
-        <div class="hero-visual-card">
-          <div class="hero-image-wrapper">
-            <img src="assets/p1.jpg" alt="Creative English Spoken Center Ambikapur Students & Classroom" style="width: 100%; height: 340px; object-fit: cover; border-radius: var(--radius-lg);" onerror="this.src='assets/images/hero-illustration.svg'" />
+        <div class="hero-visual-card" style="padding: 0.5rem; background: linear-gradient(135deg, var(--color-navy-950), var(--color-navy-800));">
+          <div class="hero-image-wrapper" style="padding: 0; background: transparent; overflow: hidden; border-radius: var(--radius-lg);">
+            <img src="assets/p2.jpg" alt="Creative Institute Spoken English Poster - Ambikapur" style="width: 100%; height: auto; max-height: 520px; object-fit: contain; border-radius: var(--radius-lg); display: block;" onerror="this.src='assets/images/hero-illustration.svg'" />
           </div>
 
           <div class="floating-badge floating-badge-top">
@@ -260,6 +265,52 @@
     </div>
   </section>
 
+  <!-- Official Banner & Two Centers Showcase (p1.jpg) -->
+  <section class="section" style="padding: 3.5rem 0; background-color: #ffffff;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <div class="section-badge">Official Institute Announcement &amp; Centers</div>
+        <h2 class="section-title">
+          Two Centers in <span class="highlight-underline">Ambikapur &amp; Surajpur</span>
+        </h2>
+        <p class="section-subtitle">
+          Navratri Special 30% Discount Batch starting soon at 6:30 PM! Offline &amp; Online Classes available.
+        </p>
+      </div>
+
+      <div class="banner-img-card" style="position: relative; max-width: 1100px; margin: 0 auto; border: 3px solid var(--color-amber-500); box-shadow: var(--shadow-hover); border-radius: var(--radius-xl); overflow: hidden; background: #000;">
+        <img src="assets/p1.jpg" alt="Creative English Spoken Centre Official Banner - Ambikapur Renuka Hostel & Jagatpur Surajpur Centers" style="width: 100%; height: auto; display: block;" onerror="this.style.display='none'" />
+      </div>
+
+      <!-- Quick Action Buttons for the Banner -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem;">
+        <a href="tel:+917354523597" class="btn btn-call" style="font-size: 1rem; padding: 0.85rem 1.75rem;">
+          📞 Call Institute: +91 73545 23597
+        </a>
+        <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%8E%89%20I%20saw%20your%20official%20banner%20and%20want%20to%20claim%20the%20%2A30%25%20Discount%20for%20the%206%3A30%20PM%20Batch%2A%20at%20Creative%20English%20Spoken%20Center%21%20%F0%9F%A4%A9%F0%9F%93%9A%20Please%20share%20admission%20details%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="font-size: 1rem; padding: 0.85rem 1.75rem;">
+          💬 WhatsApp for 30% Discount &amp; 6:30 PM Batch
+        </a>
+        <button type="button" class="btn btn-primary open-demo-modal" style="font-size: 1rem; padding: 0.85rem 1.75rem;">
+          📅 Book Free Demo Class
+        </button>
+      </div>
+
+      <!-- Quick Center Details Strip -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+        <div style="background-color: var(--color-bg-slate); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem;">
+          <h4 style="font-size: 1rem; color: var(--color-navy-900); font-weight: 800; margin-bottom: 0.25rem;">📍 Branch 1: Ambikapur</h4>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Banaras Road, near Renuka Girls Hostel (Near Holy Cross School, Back Gate), Ambikapur</p>
+          <a href="tel:+917354523597" style="display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--color-navy-800);">📞 Call: +91 73545 23597</a>
+        </div>
+        <div style="background-color: var(--color-bg-slate); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem;">
+          <h4 style="font-size: 1rem; color: var(--color-navy-900); font-weight: 800; margin-bottom: 0.25rem;">📍 Branch 2: Jagatpur (Surajpur)</h4>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Jagatpur Karwa, Surajpur (C.G.)</p>
+          <a href="tel:+917354523597" style="display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--color-navy-800);">📞 Call: +91 73545 23597</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 5. Courses Section -->
   <section id="courses" class="section">
     <div class="container">
@@ -295,7 +346,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Basic Spoken English">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Basic%20Spoken%20English%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%8C%9F%20I%20want%20to%20enquire%20about%20the%20%2ABasic%20Spoken%20English%20Course%2A%20%28Hindi%20to%20English%29%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%F0%9F%97%A3%EF%B8%8F%F0%9F%93%9A%20Please%20share%20new%20batch%20timings%20%26%20fee%20details%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -320,7 +371,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Advanced Spoken English & Fluency">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Advanced%20Spoken%20English%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%94%A5%20I%20want%20to%20enquire%20about%20the%20%2AAdvanced%20Spoken%20English%20%26%20Fluency%20Mastery%2A%20course%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%F0%9F%8E%AF%E2%9C%A8%20Please%20share%20batch%20details%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -345,7 +396,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Public Speaking & Stage Confidence">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Public%20Speaking%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%8E%99%EF%B8%8F%20I%20want%20to%20enquire%20about%20the%20%2APublic%20Speaking%20%26%20Stage%20Confidence%2A%20course%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%F0%9F%8E%A4%F0%9F%8F%86%20Please%20share%20schedule%20details%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -370,7 +421,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Personality Development & Grooming">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Personality%20Development%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%91%94%20I%20want%20to%20enquire%20about%20the%20%2APersonality%20Development%20%26%20Grooming%2A%20course%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%E2%9C%A8%F0%9F%92%BC%20Please%20share%20batch%20details%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -395,7 +446,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Interview Prep & Group Discussion">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Interview%20Prep%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%92%BC%20I%20want%20to%20enquire%20about%20the%20%2AInterview%20Preparation%20%26%20Group%20Discussion%20%28GD%29%2A%20course%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%F0%9F%8E%AF%F0%9F%93%84%20Please%20share%20mock%20session%20timings%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -420,7 +471,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Kids & School Students English">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Kids%20English%20Program%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%8E%92%20I%20want%20to%20enquire%20about%20the%20%2AKids%20%26%20School%20Students%20English%20Program%2A%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%F0%9F%91%A7%F0%9F%91%A6%F0%9F%93%9A%20Please%20share%20afternoon%20batch%20details%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -445,7 +496,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Competitive Exam English">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Competitive%20Exam%20English%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%93%96%20I%20want%20to%20enquire%20about%20the%20%2ACompetitive%20Exam%20English%20%28CGPSC%2FVyapam%2FSSC%2FBanking%29%2A%20course%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%F0%9F%93%9D%F0%9F%8E%AF%20Please%20share%20batch%20timings%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
 
@@ -470,7 +521,7 @@
           </div>
           <div class="course-actions">
             <button type="button" class="btn btn-outline btn-sm open-demo-modal" data-course="Professional & Business English">Book Demo</button>
-            <a href="https://wa.me/917354523597?text=Hello!%20I%20want%20to%20enquire%20about%20the%20Business%20English%20course%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%8F%A2%20I%20want%20to%20enquire%20about%20the%20%2AProfessional%20%26%20Business%20English%2A%20course%20at%20Creative%20English%20Spoken%20Center%2C%20Ambikapur.%20%F0%9F%93%88%F0%9F%92%BC%20Please%20share%20corporate%20batch%20details%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">💬 WhatsApp</a>
           </div>
         </div>
       </div>
@@ -1045,7 +1096,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="assets/logo.jpg" alt="Creative English Spoken Center Logo" style="width: 44px; height: 44px; border-radius: var(--radius-md); object-fit: contain; background: #ffffff; padding: 2px;" onerror="this.style.display='none'" />
+            <img src="assets/logo.jpg" alt="Creative English Spoken Center Logo" class="brand-logo-img" style="width: 48px; height: 48px; border: 2px solid var(--color-amber-500);" onerror="this.style.display='none'" />
             <div>
               <span class="logo-text-title" style="color: #ffffff;">Creative English</span>
               <span class="logo-text-sub" style="color: var(--color-amber-400);">Spoken Center • Ambikapur</span>
@@ -1105,10 +1156,13 @@
     </button>
   </div>
 
-  <!-- 14. Floating Desktop WhatsApp Button -->
-  <div class="floating-whatsapp">
-    <a href="https://wa.me/917354523597?text=Hello!%20I%20would%20like%20to%20enquire%20about%20spoken%20English%20courses%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" aria-label="Chat with counselor on WhatsApp">
-      💬 Chat with Counselor
+  <!-- 14. Floating Desktop Actions (Direct Call & WhatsApp) -->
+  <div class="floating-actions" aria-label="Quick Contact Actions">
+    <a href="tel:+917354523597" class="floating-btn floating-call-btn" aria-label="Call +91 73545 23597 directly">
+      📞 Call: +91 73545 23597
+    </a>
+    <a href="https://wa.me/917354523597?text=%F0%9F%91%8B%20%2A%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20Sir%21%2A%20%F0%9F%8C%9F%20I%20want%20to%20enquire%20about%20Spoken%20English%20classes%20at%20Creative%20English%20Spoken%20Center,%20Ambikapur.%20%F0%9F%A4%A9%F0%9F%93%9A%20Please%20guide%20me%21%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="floating-btn floating-whatsapp-btn" aria-label="Chat with counselor on WhatsApp">
+      💬 WhatsApp Counselor
     </a>
   </div>
 
@@ -1117,12 +1171,15 @@
     <div class="modal-container">
       <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
 
-      <div style="margin-bottom: 1.5rem;">
-        <span class="section-badge" style="margin-bottom: 0.5rem;">100% Free Demo Session</span>
-        <h3 id="modalTitle" style="font-size: 1.8rem; color: var(--color-navy-900);">Reserve Your Demo Seat</h3>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);">
-          Join a live session at Banaras Road, Ambikapur. No upfront fee or obligation.
-        </p>
+      <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+        <img src="assets/logo.jpg" alt="Creative English Spoken Center Logo" class="brand-logo-img" style="width: 48px; height: 48px; border: 2px solid var(--color-amber-500);" onerror="this.style.display='none'" />
+        <div>
+          <span class="section-badge" style="margin-bottom: 0.25rem;">100% Free Demo Session</span>
+          <h3 id="modalTitle" style="font-size: 1.45rem; color: var(--color-navy-900); margin: 0; line-height: 1.2;">Reserve Your Demo Seat</h3>
+          <p style="font-size: 0.82rem; color: var(--color-text-muted); margin: 0;">
+            Creative English Spoken Center • Banaras Road, Ambikapur
+          </p>
+        </div>
       </div>
 
       <form id="modalDemoForm">
