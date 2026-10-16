@@ -1,177 +1,84 @@
 # Creative English Spoken Center — Official Website
 
-Modern, high-converting, mobile-first website for **Creative English Spoken Center**, the leading spoken English, public speaking, and personality development coaching institute located in **Ambikapur, Surguja, Chhattisgarh, India**.
+A complete, production-ready website for **Creative English Spoken Center**, Ambikapur, Chhattisgarh.
+Built entirely using clean **HTML5, Vanilla CSS3, and JavaScript** with **zero build tools, zero dependencies, and instant local execution**.
 
 ---
 
-## 🌟 Key Features
+## 📁 Project Structure
 
-- **⚡ Blazing Fast Next.js (App Router) + TypeScript**: Static rendering with server-side API routes.
-- **🎨 Custom Design System**: Deep Navy (`#1E3A8A`), vibrant Amber CTA (`#F59E0B`), soft shadows, rounded-2xl cards.
-- **📱 100% Mobile Optimized (>80% Visitors)**: Minimum 44px tap targets, zero horizontal overflow at 320px+, sticky conversion bottom bar (Call, WhatsApp, Book Demo) with iOS safe-area support.
-- **⚙️ Single Source of Truth (`/data/siteConfig.ts`)**: All institute details, courses, batch timings, fees, testimonials, FAQs, and NAP live in one single file.
-- **📋 Lead Generation & Validation**:
-  - Dual-mode form (Inline on homepage + Global popup modal).
-  - Client & Server validation with **Zod** + **React Hook Form**.
-  - 10-digit Indian mobile number validation.
-  - Honeypot anti-spam protection.
-  - Automatic forward to **Google Sheets** via Google Apps Script Webhook.
-  - Optional instant email notifications via **Resend**.
-  - Instant WhatsApp follow-up button pre-filled with student submission details.
-- **🔍 Comprehensive Local SEO (Ambikapur & Surguja)**:
-  - Open Graph & Twitter Cards.
-  - Auto-generated `sitemap.xml` & `robots.txt`.
-  - JSON-LD Structured Data: `EducationalOrganization`, `LocalBusiness`, `FAQPage`, and `Article`.
-  - 3 Starter SEO Blog Guides for ranking on Google search.
+```text
+Creative English Spoken Center/
+├── index.html            # Complete website (Hero, Courses, Why Us, Batches, Demo Form, FAQs, Map)
+├── css/
+│   └── style.css         # Custom Vanilla CSS design system (Navy #1E3A8A & Amber #F59E0B)
+├── js/
+│   └── script.js         # Interactive engine (Modal, Form validation, Confetti, Accordion, WhatsApp)
+├── assets/
+│   ├── favicon.svg       # Institute logo favicon
+│   └── images/
+│       └── hero-illustration.svg # Stage speaking hero illustration
+└── README.md             # Documentation
+```
 
 ---
 
-## 🚀 Quick Start Guide
+## ⚡ How to Open & Run Locally
 
-### 1. Prerequisites
-- **Node.js**: v18.18 or higher (Node 20+ / 24+ recommended)
-- **npm** or **pnpm** / **yarn**
+### Option 1: Direct File Open
+Simply double-click **`index.html`** to open it in Chrome, Edge, Brave, Firefox, or Safari!
+There is no `npm install`, no Node.js, and no build process required.
 
-### 2. Installation
+### Option 2: Using VS Code Live Server / Localhost
+If you use VS Code:
+1. Right-click on `index.html`.
+2. Click **"Open with Live Server"**.
+
+Or using any simple HTTP server:
 ```bash
-# Clone or navigate to the project directory
-cd "e:\Client Website\Deepak sir"
-
-# Install dependencies
-npm install
-```
-
-### 3. Local Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 4. Production Build & Test
-```bash
-npm run build
-npm start
+npx serve .
+# or
+python -m http.server 8000
 ```
 
 ---
 
-## ✏️ How to Edit Content (`/data/siteConfig.ts`)
+## 🚀 How to Host & Go Live on the Internet
 
-Every piece of editable content on the website is centralized in:
-📂 `data/siteConfig.ts`
+### Option A: GitHub Pages (100% Free Forever)
+1. Push this folder to a GitHub repository (e.g. `creative-english`).
+2. Go to **Repository Settings** > **Pages**.
+3. Under **Build and deployment**, select **Source: Deploy from a branch** (`main` / `root`).
+4. Click **Save**. Within 60 seconds, your site is live at: `https://your-username.github.io/creative-english`
 
-You can change:
-1. **Institute Phone & WhatsApp**: Update `contact.phone`, `contact.whatsappNumber`.
-2. **Address & Landmark**: Update `contact.address`.
-3. **Course Programs**: Edit title, Hindi title, duration, fee estimate, and bullet outcomes in `courses: [...]`.
-4. **Batch Timings & Fees**: Edit rows in `batches: [...]`.
-5. **Real Student Testimonials**: Replace placeholder reviews in `testimonials: [...]` with genuine student quotes.
-6. **FAQs**: Add or update questions and answers in `faqs: [...]`.
-7. **Blog Articles**: Add new educational articles in `blogPosts: [...]`.
+### Option B: Netlify (Drag & Drop in 10 Seconds)
+1. Go to [app.netlify.com/drop](https://app.netlify.com/drop).
+2. Drag and drop this folder (`Deepak sir`) into the browser.
+3. Your website is immediately live with free SSL!
 
----
-
-## 📊 Connecting Google Sheets for Lead Collection
-
-To have all demo class inquiries automatically saved into your personal Google Sheet:
-
-### Step 1: Create a Google Sheet
-1. Open [Google Sheets](https://sheets.new) and create a new spreadsheet named **"Creative English Leads"**.
-2. In Row 1, add these column headers:
-   - `A1`: **Timestamp**
-   - `B1`: **Full Name**
-   - `C1`: **Phone Number**
-   - `D1`: **Course Interested**
-   - `E1`: **Current Level**
-   - `F1`: **Preferred Time**
-   - `G1`: **Message**
-   - `H1`: **Source**
-
-### Step 2: Add Google Apps Script
-1. Click **Extensions** > **Apps Script**.
-2. Replace all code in the script editor with this snippet:
-
-```javascript
-function doPost(e) {
-  try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var data = JSON.parse(e.postData.contents);
-
-    sheet.appendRow([
-      data.submittedAt || new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-      data.fullName || "",
-      data.phone || "",
-      data.courseInterested || "",
-      data.currentLevel || "",
-      data.preferredTime || "",
-      data.message || "",
-      data.source || "Website Demo Form"
-    ]);
-
-    return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
-      .setMimeType(ContentService.MimeType.JSON);
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
-```
-
-### Step 3: Deploy as Web App
-1. Click **Deploy** > **New deployment**.
-2. Choose **Web app**.
-3. Set **Execute as**: *Me (your email)*.
-4. Set **Who has access**: *Anyone*.
-5. Click **Deploy** and copy the **Web app URL** (`https://script.google.com/macros/s/AKfycb.../exec`).
-
-### Step 4: Configure in Environment File
-Paste the URL into your `.env.local` file (or in Vercel Environment Variables):
-```env
-GOOGLE_SHEET_WEBHOOK_URL=https://script.google.com/macros/s/AKfycb.../exec
-```
+### Option C: Vercel
+1. Import the GitHub repository on [vercel.com](https://vercel.com).
+2. Framework Preset: **Other**.
+3. Click **Deploy**.
 
 ---
 
-## 📧 (Optional) Email Notifications via Resend
+## ✍️ How to Edit Content & Prices
 
-To receive an instant email whenever a new lead arrives:
-1. Create a free account at [Resend.com](https://resend.com).
-2. Create an API Key.
-3. In your `.env.local` add:
-```env
-RESEND_API_KEY=re_your_api_key_here
-NOTIFICATION_EMAIL=creativeenglishambikapur@gmail.com
-```
+Open `index.html` in any text editor (Notepad, VS Code, etc.):
+- **Phone / WhatsApp**: Search for `7354523597` and replace with your new number.
+- **Fees**: Search for `₹2,499` or `₹2,999` to adjust course pricing.
+- **Address**: Search for `Banaras Road` to edit center location.
+- **Courses**: Search for `course-card` to edit titles, descriptions, or bullet outcomes.
 
 ---
 
-## 🚀 Deploying to Vercel (Zero Config)
+## 📱 Features Included
 
-1. Push this repository to GitHub or GitLab.
-2. Go to [Vercel](https://vercel.com) and click **"Add New Project"**.
-3. Import your repository.
-4. In **Environment Variables**, add:
-   - `NEXT_PUBLIC_SITE_URL`: `https://your-custom-domain.com`
-   - `GOOGLE_SHEET_WEBHOOK_URL`: *(Your Google Apps Script URL from above)*
-   - `RESEND_API_KEY`: *(Optional)*
-5. Click **Deploy**. Vercel will build and deploy the site in ~60 seconds.
-
-### Connecting a Custom Domain on Vercel:
-1. In your Vercel project dashboard, go to **Settings** > **Domains**.
-2. Enter your custom domain (e.g. `creativeenglishambikapur.com`).
-3. Set the provided `A` or `CNAME` records at your domain registrar (GoDaddy, Namecheap, Hostinger, etc.).
-
----
-
-## 🏛️ Business NAP (Name, Address, Phone)
-
-- **Business Name**: Creative English Spoken Center
-- **Address**: Banaras Road, near Renuka Girls Hostel, Holy Cross College Road, Ambikapur, Chhattisgarh 497001, India
-- **District**: Surguja
-- **Phone / WhatsApp**: +91 73545 23597
-- **Operating Hours**: Monday - Saturday: 7:00 AM - 8:00 PM | Sunday: 9:00 AM - 1:00 PM
-
----
-
-## 🛡️ License
-Private commercial software for Creative English Spoken Center. All rights reserved.
+- **Sticky Navigation**: Smooth scrolling with active section indicator.
+- **Lead Booking Modal**: Popup form with 10-digit Indian mobile validation.
+- **Instant WhatsApp Confirmation**: Pre-fills the student's name, phone, course, and batch slot.
+- **Animated Counters**: Count-up numbers on scroll into view.
+- **FAQ Accordion**: 8 interactive questions and answers.
+- **Responsive Layout**: Designed for mobile phones (320px+), tablets, laptops, and 4K displays.
+- **Mobile Sticky Bottom Bar**: Quick Call, WhatsApp, and Demo booking buttons.
